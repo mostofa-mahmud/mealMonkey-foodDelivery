@@ -1,15 +1,24 @@
 part of pages;
 
 
-class IntroPage extends StatefulWidget {
-  const IntroPage({Key? key}) : super(key: key);
+class Splash_srcn extends StatefulWidget {
+  const Splash_srcn({Key? key}) : super(key: key);
 
   @override
-  _IntroPageState createState() => _IntroPageState();
+  _Splash_srcnState createState() => _Splash_srcnState();
 }
 
-class _IntroPageState extends State<IntroPage> {
+class _Splash_srcnState extends State<Splash_srcn> {
+
+
   @override
+  void initState(){
+    super.initState();
+    Timer(const Duration(seconds: 5), (){
+
+    });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -19,8 +28,10 @@ class _IntroPageState extends State<IntroPage> {
 
 
             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset('assets/logo.png', fit: BoxFit.fill, width: 300.w,),
+                SizedBox(height: 50.h,),
                 
                 Text.rich(
                     TextSpan(text: 'Meal ',
@@ -36,6 +47,8 @@ class _IntroPageState extends State<IntroPage> {
                       ]
                     ),
                 ),
+                SizedBox(height: 60.h,),
+
                 Text('Food Delivery',
                   style: Theme.of(context).textTheme.bodyText1!.copyWith( color: secondaryFontColor, letterSpacing: 10.w)
                 )
