@@ -1,65 +1,29 @@
 part of pages;
 
-
-class Splash_srcn extends StatefulWidget {
-  const Splash_srcn({Key? key}) : super(key: key);
+class Intro_page extends StatefulWidget {
+  //const Intro_page({Key? key}) : super(key: key);
 
   @override
-  _Splash_srcnState createState() => _Splash_srcnState();
+  _Intro_pageState createState() => _Intro_pageState();
 }
 
-class _Splash_srcnState extends State<Splash_srcn> {
+class _Intro_pageState extends State<Intro_page> {
 
+  final List<IntroModel> _data = IntroModel.data;
 
   @override
-  void initState(){
-    super.initState();
-    Timer(const Duration(seconds: 5), (){
-
-    });
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
-          children: [
-            Image.asset('assets/splash101.jpg', fit: BoxFit.fill,),
-
-
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+      
+      body: PageView.builder(
+        itemCount: _data.length,
+          itemBuilder: (context, index){
+            return Column(
               children: [
-                Image.asset('assets/logo.png', fit: BoxFit.fill, width: 300.w,),
-                SizedBox(height: 50.h,),
-                
-                Text.rich(
-                    TextSpan(text: 'Meal ',
-                      style: Theme.of(context).textTheme.headline4!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: mainColor
-                      ),
-                      children: [
-                        TextSpan(
-                          text: 'Monkey',
-                          style: TextStyle(color: primaryFontColor)
-                        )
-                      ]
-                    ),
-                ),
-                SizedBox(height: 60.h,),
-
-                Text('Food Delivery',
-                  style: Theme.of(context).textTheme.bodyText1!.copyWith( color: secondaryFontColor, letterSpacing: 10.w)
-                )
-
-
-
-
+                Image.asset(_data[index].imagePath!),
               ],
-            )
-          ]
-
+            );
+            },
       ),
     );
   }

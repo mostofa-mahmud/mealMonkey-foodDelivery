@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         routes: {
-          "/" : (context)=> Splash_srcn(),
+          "/" : (context)=> const Splash_srcn(),
+          "/intro" : (context)=> Intro_page(),
         },
       ),
     );
