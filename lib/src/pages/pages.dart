@@ -10,3 +10,4 @@ import 'package:meal_monkey/styles/styles.dart';
 
 part 'entry/splash_scrn.dart';
 part 'entry/intro_page.dart';
+part 'entry/starter_page.dart';

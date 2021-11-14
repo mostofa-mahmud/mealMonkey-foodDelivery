@@ -10,17 +10,17 @@ class Intro_page extends StatefulWidget {
 class _Intro_pageState extends State<Intro_page> {
 
 
-  late final PageController _controller;
+  late final PageController _pageController;
   final List<IntroModel> _data = IntroModel.data;
   int _activeIndex =0;
 
   @override
   void initState(){
     super.initState();
-    _controller = PageController();
-    _controller.addListener(() {
+    _pageController = PageController();
+    _pageController.addListener(() {
       setState(() {
-        _activeIndex = _controller.page!.round();
+        _activeIndex = _pageController.page!.round();
 
       });
     });
@@ -34,7 +34,7 @@ class _Intro_pageState extends State<Intro_page> {
         alignment: Alignment.bottomCenter,
         children: [
           PageView.builder(
-            controller: _controller,
+            controller: _pageController,
             itemCount: _data.length,
               itemBuilder: (context, index){
                 return Column(
@@ -96,8 +96,11 @@ class _Intro_pageState extends State<Intro_page> {
                 Expanded(
                   child: ElevatedButton(
                       onPressed: (){
-                        if((_activeIndex + 1)>= _data.length) return;
-                        _controller.animateToPage(
+                        if((_activeIndex + 1)>= _data.length) {
+                          Navigator.pushReplacementNamed(context, '/starter');
+                          return;
+                        };
+                        _pageController.animateToPage(
                             _activeIndex + 1,
                             duration: const Duration(milliseconds: 250),
                             curve: Curves.easeIn
