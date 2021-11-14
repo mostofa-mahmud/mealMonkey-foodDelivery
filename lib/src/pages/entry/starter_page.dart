@@ -11,7 +11,12 @@ class _StarterPageState extends State<StarterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          SplashLogo(),
+        ],
+      ),
     );
   }
 }
