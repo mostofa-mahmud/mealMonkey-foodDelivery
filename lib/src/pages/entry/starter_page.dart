@@ -63,6 +63,8 @@ class _StarterPageState extends State<StarterPage> {
 
                     child: Text('Create an account', style: TextStyle(color: mainColor),)
                 ),
+
+
               ],
             ),
           )
