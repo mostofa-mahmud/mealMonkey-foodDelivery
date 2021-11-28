@@ -91,33 +91,28 @@ class _Intro_pageState extends State<Intro_page> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 60.w, vertical: 120.h),
-            child: Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton(
-                      onPressed: (){
-                        if((_activeIndex + 1)>= _data.length) {
-                          Navigator.pushReplacementNamed(context, '/starter');
-                          return;
-                        };
-                        _pageController.animateToPage(
-                            _activeIndex + 1,
-                            duration: const Duration(milliseconds: 250),
-                            curve: Curves.easeIn
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: mainColor,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(40),
-                        ),
-                        padding: EdgeInsets.all(15),
-                      ),
-
-                      child: Text('Next')
+            child: ElevatedButton(
+                onPressed: (){
+                  if((_activeIndex + 1)>= _data.length) {
+                    Navigator.pushReplacementNamed(context, '/starter');
+                    return;
+                  };
+                  _pageController.animateToPage(
+                      _activeIndex + 1,
+                      duration: const Duration(milliseconds: 250),
+                      curve: Curves.easeIn
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: mainColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40),
                   ),
+                    padding: EdgeInsets.all(15),
+                    minimumSize: const Size(double.infinity, 50)
                 ),
-              ],
+
+                child: Text('Next')
             ),
           )
           
