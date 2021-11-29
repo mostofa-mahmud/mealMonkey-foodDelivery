@@ -15,6 +15,8 @@ class _StarterPageState extends State<StarterPage> {
         fit: StackFit.expand,
         children: [
 
+          StarterPainter(),
+
 
           SplashLogo(),
 
