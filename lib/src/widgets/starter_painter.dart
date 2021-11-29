@@ -18,10 +18,20 @@ class _StarterCustomPainter extends CustomPainter {
     Path path = Path();
 
     double maxHeight = 1000.h;
+    double maxWidth = size.width.abs();
+    double radius = 400.r;
+    double sideOffset = (maxWidth - radius)/ 2;
+    double borderRadius = 50.r;
 
     path.moveTo(0, 0);
-    path.relativeLineTo(0, maxHeight);
+    path.relativeLineTo(0, maxHeight - borderRadius);
+
+    path.relativeLineTo(sideOffset, 0);
+    path.relativeArcToPoint(Offset(radius, 0), radius: Radius.circular(200.r));
+    path.relativeLineTo(sideOffset, 0);
+
     path.relativeLineTo(size.width, 0);
+    path.relativeLineTo(0, -maxHeight);
     path.close();
 
     final Paint paint = Paint()..color = mainColor;
