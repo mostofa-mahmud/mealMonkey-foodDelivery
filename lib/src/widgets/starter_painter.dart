@@ -20,21 +20,27 @@ class _StarterCustomPainter extends CustomPainter {
     double maxHeight = 1000.h;
     double maxWidth = size.width.abs();
     double radius = 400.r;
-    double sideOffset = (maxWidth - radius)/ 2;
     double borderRadius = 50.r;
+    double sideOffset = (maxWidth - radius- (4* borderRadius))/ 2;
 
     path.moveTo(0, 0);
     path.relativeLineTo(0, maxHeight - borderRadius);
+    path.relativeQuadraticBezierTo(0, borderRadius, borderRadius, borderRadius);
 
     path.relativeLineTo(sideOffset, 0);
+    path.relativeQuadraticBezierTo(borderRadius -12.r, 0 , borderRadius, -borderRadius);
+
     path.relativeArcToPoint(Offset(radius, 0), radius: Radius.circular(200.r));
+
+    path.relativeQuadraticBezierTo(12.r, borderRadius, borderRadius, borderRadius);
     path.relativeLineTo(sideOffset, 0);
 
-    path.relativeLineTo(size.width, 0);
+    path.relativeQuadraticBezierTo(borderRadius, 0, borderRadius, -borderRadius);
     path.relativeLineTo(0, -maxHeight);
     path.close();
 
     final Paint paint = Paint()..color = mainColor;
+    canvas.drawShadow(path, Colors.black, 10, true);
     canvas.drawPath(path, paint);
   }
 
