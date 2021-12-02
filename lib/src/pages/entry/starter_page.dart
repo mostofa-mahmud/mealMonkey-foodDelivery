@@ -32,16 +32,8 @@ class _StarterPageState extends State<StarterPage> {
               children: [
                 ElevatedButton(
                     onPressed: (){
-
+                      Navigator.pushReplacementNamed(context, kRouteLogin);
                     },
-                    style: ElevatedButton.styleFrom(
-                      primary: mainColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40),
-                      ),
-                        padding: EdgeInsets.all(15),
-                        minimumSize: const Size(double.infinity, 50)
-                    ),
 
                     child: Text('Login')
                 ),
@@ -54,16 +46,8 @@ class _StarterPageState extends State<StarterPage> {
                     onPressed: (){
 
                     },
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40),
-                      ),
-                        side: BorderSide(color: mainColor),
-                        padding: EdgeInsets.all(15),
-                        minimumSize: const Size(double.infinity, 50)
-                    ),
 
-                    child: Text('Create an account', style: TextStyle(color: mainColor),)
+                    child: Text('Create an account')
                 ),
 
 

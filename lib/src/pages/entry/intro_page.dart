@@ -1,5 +1,6 @@
 part of pages;
 
+
 class Intro_page extends StatefulWidget {
   //const Intro_page({Key? key}) : super(key: key);
 
@@ -29,50 +30,50 @@ class _Intro_pageState extends State<Intro_page> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           PageView.builder(
             controller: _pageController,
             itemCount: _data.length,
-              itemBuilder: (context, index){
-                return Column(
-                  children: [
-                    SizedBox(height: 150.h,),
-                    Image.asset(
-                      _data[index].imagePath!,
-                      height: 1000.h,
-                    ),
-                  ],
-                );
-                },
+            itemBuilder: (context, index){
+              return Column(
+                children: [
+                  SizedBox(height: 150.h,),
+                  Image.asset(
+                    _data[index].imagePath!,
+                    height: 1000.h,
+                  ),
+                ],
+              );
+            },
           ),
-          
+
           Padding(
             padding: EdgeInsets.only(bottom: 900.h),
             child: SliderIndicator(
-                length: _data.length,
-                activeIndex: _activeIndex,
-                indicator: Icon(
-                    Icons.fiber_manual_record_rounded,
-                  color: placeholderColor,
-                  size: 32.w,
-                ),
-                activeIndicator: Icon(
-                    Icons.fiber_manual_record_rounded,
-                  color: mainColor,
-                  size: 32.w,
-                ),
+              length: _data.length,
+              activeIndex: _activeIndex,
+              indicator: Icon(
+                Icons.fiber_manual_record_rounded,
+                color: placeholderColor,
+                size: 32.w,
+              ),
+              activeIndicator: Icon(
+                Icons.fiber_manual_record_rounded,
+                color: mainColor,
+                size: 32.w,
+              ),
             ),
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 700.h),
             child: Text(
-                _data[_activeIndex].title!,
+              _data[_activeIndex].title!,
               style: Theme.of(context).textTheme.headline4!.copyWith(
-                  color: primaryFontColor,
-                  fontWeight: FontWeight.bold,
+                color: primaryFontColor,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -81,10 +82,10 @@ class _Intro_pageState extends State<Intro_page> {
             child: SizedBox(
               height: 200.h,
               child: Text(
-                  _data[_activeIndex].description!,
+                _data[_activeIndex].description!,
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                  color: secondaryFontColor,
-                  height: 4.h
+                    color: secondaryFontColor,
+                    height: 4.h
                 ),
               ),
             ),
@@ -94,7 +95,7 @@ class _Intro_pageState extends State<Intro_page> {
             child: ElevatedButton(
                 onPressed: (){
                   if((_activeIndex + 1)>= _data.length) {
-                    Navigator.pushReplacementNamed(context, '/starter');
+                    Navigator.pushReplacementNamed(context, kRouteStarter);
                     return;
                   };
                   _pageController.animateToPage(
@@ -103,19 +104,12 @@ class _Intro_pageState extends State<Intro_page> {
                       curve: Curves.easeIn
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  primary: mainColor,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
-                  ),
-                    padding: EdgeInsets.all(15),
-                    minimumSize: const Size(double.infinity, 50)
-                ),
+
 
                 child: Text('Next')
             ),
           )
-          
+
         ],
       ),
     );
