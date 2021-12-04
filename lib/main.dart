@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meal_monkey/src/pages/pages.dart';
 import 'package:meal_monkey/styles/styles.dart';
 
@@ -44,6 +42,20 @@ class MyApp extends StatelessWidget {
                   padding: EdgeInsets.all(15),
                   minimumSize: const Size(double.infinity, 50)
               ),
+            ),
+
+
+            inputDecorationTheme: InputDecorationTheme(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(40),
+                  borderSide: BorderSide.none,
+                ),
+                labelStyle: TextStyle(
+                  color: secondaryFontColor
+                ),
+                contentPadding: EdgeInsets.symmetric(
+                  vertical: 4, horizontal: 28,
+                )
             )
 
 

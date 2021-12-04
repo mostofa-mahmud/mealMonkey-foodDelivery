@@ -6,3 +6,4 @@ import 'package:meal_monkey/styles/styles.dart';
 
 part 'splash_logo.dart';
 part 'starter_painter.dart';
+part 'custom_textFormField.dart';
