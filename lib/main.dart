@@ -52,10 +52,10 @@ class MyApp extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40),
                   borderSide: BorderSide.none,
                 ),
-                floatingLabelStyle: TextStyle(
-                  color: secondaryFontColor,
-                  height: 10.h,
-                ),
+                // floatingLabelStyle: TextStyle(
+                //   color: secondaryFontColor,
+                //   height: 10.h,
+                // ),
                 contentPadding: EdgeInsets.symmetric(
                   vertical: 40.h, horizontal: 80.w,
                 )
