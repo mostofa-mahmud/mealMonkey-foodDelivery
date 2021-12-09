@@ -46,15 +46,18 @@ class MyApp extends StatelessWidget {
 
 
             inputDecorationTheme: InputDecorationTheme(
+                fillColor: placeholderColor,
+                filled: true,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(40),
                   borderSide: BorderSide.none,
                 ),
-                labelStyle: TextStyle(
-                  color: secondaryFontColor
+                floatingLabelStyle: TextStyle(
+                  color: secondaryFontColor,
+                  height: 10.h,
                 ),
                 contentPadding: EdgeInsets.symmetric(
-                  vertical: 4, horizontal: 28,
+                  vertical: 40.h, horizontal: 80.w,
                 )
             )
 
@@ -69,6 +72,7 @@ class MyApp extends StatelessWidget {
           kRouteIntro : (context)=> Intro_page(),
           kRouteStarter : (context)=> StarterPage(),
           kRouteLogin : (context)=> LoginPage(),
+          kRouteRegister : (context)=> RegisterPage(),
         },
       ),
     );

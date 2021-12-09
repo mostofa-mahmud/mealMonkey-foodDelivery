@@ -9,18 +9,11 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 16),
-      decoration: BoxDecoration(
-        color: placeholderColor,
-        borderRadius: BorderRadius.circular(50),
-      ),
-      child: TextFormField(
-        style: TextStyle(color: primaryFontColor),
-        decoration: InputDecoration(
-          labelText: labelText,
-          isCollapsed: true,
-        ),
+    return TextFormField(
+      style: TextStyle(color: primaryFontColor),
+      decoration: InputDecoration(
+        labelText: labelText,
+        isCollapsed: true,
       ),
     );
   }

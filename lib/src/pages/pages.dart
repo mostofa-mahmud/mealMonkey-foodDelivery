@@ -15,3 +15,8 @@ part 'entry/splash_scrn.dart';
 part 'entry/intro_page.dart';
 part 'entry/starter_page.dart';
 part 'entry/login_page.dart';
+part 'entry/registerPage.dart';
+
+part 'entry/reset_password/enter_email.dart';
+part 'entry/reset_password/enter_otp.dart';
+part 'entry/reset_password/new_password.dart';
