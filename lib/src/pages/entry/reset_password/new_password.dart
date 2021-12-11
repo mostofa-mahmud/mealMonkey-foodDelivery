@@ -16,55 +16,57 @@ class EnterNewPassPage extends StatelessWidget {
           ),
         ),
 
-        body: Container(
-          padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-          height: MediaQuery.of(context).size.height,
-          child: Column(
-            children: [
+        body: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              children: [
 
-              LoginRegisterHeader(
-                  centerText: true,
-                  title: 'New Password',
-                  subTitle: 'Please enter your email to receive\na link to create new password'),
+                LoginRegisterHeader(
+                    centerText: true,
+                    title: 'New Password',
+                    subTitle: 'Please enter your email to receive\na link to create new password'),
 
-              TextFormField(
-                style: TextStyle(color: primaryFontColor),
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'New Password',
-                  isCollapsed: true,
+                TextFormField(
+                  style: TextStyle(color: primaryFontColor),
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'New Password',
+                    isCollapsed: true,
+                  ),
                 ),
-              ),
 
 
-              SizedBox(height: verticalPadding,),
+                SizedBox(height: verticalPadding,),
 
 
-              TextFormField(
-                style: TextStyle(color: primaryFontColor),
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Confirm Password',
-                  isCollapsed: true,
+                TextFormField(
+                  style: TextStyle(color: primaryFontColor),
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Confirm Password',
+                    isCollapsed: true,
+                  ),
                 ),
-              ),
 
-              SizedBox(height: verticalPadding * 2,),
-
-
-
-              ElevatedButton(
-                  onPressed: (){
-
-                    Navigator.of(context).pop();
-
-                  },
-                  child: Text("Next")
-              ),
+                SizedBox(height: verticalPadding * 2,),
 
 
 
-            ],
+                ElevatedButton(
+                    onPressed: (){
+
+                      Navigator.of(context).pop();
+
+                    },
+                    child: Text("Next")
+                ),
+
+
+
+              ],
+            ),
           ),
         )
     );
